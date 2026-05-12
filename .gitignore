@@ -1,0 +1,24 @@
+# Backend build artifacts
+backend/bin/
+backend/obj/
+backend/walkthrough.db
+backend/walkthrough.db-shm
+backend/walkthrough.db-wal
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+
+# User secrets / local settings
+backend/appsettings.*.json
+!backend/appsettings.json
+!backend/appsettings.Development.json
+
+# IDE
+.vscode/
+.idea/
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
