@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Data;
+using Route = backend.Models.Route;
 using backend.Models;
 
 namespace backend.Controllers;
@@ -35,7 +36,7 @@ public class RoutesController(AppDbContext db, IWebHostEnvironment env) : Contro
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] RouteCreateDto dto)
     {
-        var route = new Models.Route { Name = dto.Name, Description = dto.Description };
+        var route = new Route { Name = dto.Name, Description = dto.Description };
         db.Routes.Add(route);
         await db.SaveChangesAsync();
         return CreatedAtAction(nameof(GetById), new { id = route.Id }, route);
